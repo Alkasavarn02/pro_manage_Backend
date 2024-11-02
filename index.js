@@ -10,7 +10,8 @@ const cors = require("cors")
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-    origin: 'https://pro-manage-frontend-beta.vercel.app'            
+    origin: 'https://pro-manage-frontend-beta.vercel.app',
+    credentials: true           
 }));
 
 app.use(express.json())
