@@ -5,8 +5,7 @@ const CheckList = require("../Schema/checkListModel")
 const createTask = async(req,res)=>{
     try {
 
-        const {title,priority,assignedto,checkList,dueDate,progress} = req.body;
-        
+        const {title,priority,assignedto,checkList,dueDate,progress} = req.body;    
         const user = req.user;
 
         if(!user){
@@ -85,7 +84,7 @@ const createTask = async(req,res)=>{
             }
         );
 
-    }catch(err){
+    } catch(err){
         return res.status(500).json(
             {
                 success: false, 

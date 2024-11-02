@@ -26,7 +26,7 @@ const deleteTask = async(req,res)=>{
         
         await Task.findByIdAndDelete(taskId);
 
-        const updatedUserAllTasks = await User.findByIdAndUpdate(user.id,{$pull:{AllTasks:taskId}},{new:true})
+        await User.findByIdAndUpdate(user.id,{$pull:{AllTasks:taskId}},{new:true})
 
         return res.status(201).json(
             {
@@ -35,7 +35,7 @@ const deleteTask = async(req,res)=>{
             }
         );
 
-    }catch(err){
+    } catch(err){
         return res.status(500).json(
             {
                 success: false, 

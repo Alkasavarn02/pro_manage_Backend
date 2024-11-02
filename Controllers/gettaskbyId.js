@@ -14,6 +14,7 @@ const getSingleTask = async(req,res)=>{
                 message: "User is invalid or not found",
             });
         }
+
         if(!taskId){
             return res.status(403).json({
                 success: false,
@@ -38,7 +39,7 @@ const getSingleTask = async(req,res)=>{
             }
         );
 
-    }catch(err){
+    } catch(err){
         return res.status(500).json(
             {
                 success: false, 

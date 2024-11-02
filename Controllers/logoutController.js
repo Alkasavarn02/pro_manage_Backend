@@ -1,6 +1,7 @@
 const logoutController = async(req,res) => {
 
     try {
+        
         res.cookie("cookies", "", {
             httpOnly: true,
             expires: new Date()

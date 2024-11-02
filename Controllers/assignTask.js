@@ -1,4 +1,4 @@
-const User = require("../Schema/UserModel")
+const User = require("../Schema/UserModel");
 
 const assignTaskControllers = async (req, res) => {
     try {
@@ -44,6 +44,7 @@ const assignTaskControllers = async (req, res) => {
             data: updatedUser,
             message: "User assigned tasks successfully",
         });
+        
     } catch (err) {
         return res.status(500).json({
             success: false,

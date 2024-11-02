@@ -68,7 +68,6 @@ const taskAnalytics = async(req,res)=>{
             data:counts
         })
 
-
     } catch(err){
         return res.status(500).json(
             {

@@ -3,6 +3,7 @@ const User = require("../Schema/UserModel")
 
 const getTaskFilter = async (req, res) => {
     try {
+
         const user = req.user;
         const { filter } = req.body;
 
@@ -21,8 +22,8 @@ const getTaskFilter = async (req, res) => {
             allTask = await Task.find({
                 _id: { $in: existingUser.AllTasks }
             }).populate("checkList")
-        }
-        else{
+
+        } else{
             const dateFromFrontend = new Date(filter.date);
             dateFromFrontend.setHours(0, 0, 0, 0);
 
@@ -30,6 +31,7 @@ const getTaskFilter = async (req, res) => {
 
             if(filter.filterBy === "today"){
                 startOfDay = dateFromFrontend;
+                
                 endOfDay = new Date(dateFromFrontend);
                 endOfDay.setHours(23, 59, 59, 999);
 
