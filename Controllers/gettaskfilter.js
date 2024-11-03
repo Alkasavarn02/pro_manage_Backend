@@ -36,7 +36,7 @@ const getTaskFilter = async (req, res) => {
                 endOfDay.setHours(23, 59, 59, 999);
 
             } else if(filter.filterBy === "week") {
-                const dayOfWeek = dateFromFrontend.getDay();
+                const dayOfWeek = ( dateFromFrontend.getDay() + 6 ) % 7;
                 startOfDay = new Date(dateFromFrontend);
                 startOfDay.setDate(dateFromFrontend.getDate() - dayOfWeek);
                 startOfDay.setHours(0, 0, 0, 0);
