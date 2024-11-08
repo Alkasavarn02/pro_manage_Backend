@@ -26,7 +26,7 @@ const deleteTask = async(req,res)=>{
         
         await Task.findByIdAndDelete(taskId);
 
-        await User.findByIdAndUpdate(user.id,{$pull:{AllTasks:taskId}},{new:true})
+        await User.findByIdAndUpdate(user.id,{$pull:{AllTasks:mongoose.Types.ObjectId(taskId)}},{new:true})
 
         return res.status(201).json(
             {
