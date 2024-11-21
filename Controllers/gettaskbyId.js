@@ -1,5 +1,4 @@
 const Task = require("../Schema/TaskModel");
-const User = require("../Schema/UserModel");
 
 const getSingleTask = async(req,res)=>{
 
